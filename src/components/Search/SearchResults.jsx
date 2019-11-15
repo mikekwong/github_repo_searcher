@@ -3,17 +3,19 @@ import github from "../../api/github";
 
 export default class SearchResults extends Component {
   state = {
-    repos: []
+    repos: [],
+    isLoading: true,
+    error: null
   };
 
-  fetchRepos = async id => {
+  async fetchRepos(id) {
+    const { data } = await github.get(`/`);
     try {
-      const { data } = await github.get(`/`);
-      this.setState({ repos: data });
+      this.setState({ repos: data, isLoading: false });
     } catch (error) {
-      console.error(error);
+      this.setState({ error, isLoading: false });
     }
-  };
+  }
 
   render() {
     return <div></div>;

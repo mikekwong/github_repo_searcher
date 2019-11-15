@@ -1,0 +1,105 @@
+#fields {
+  position: relative;
+  top: 50px;
+}
+
+#fields div .text-input,
+#fields div select {
+  border: 1px solid #4b5050;
+  width: 322px;
+  height: 45px;
+  margin-bottom: 20px;
+}
+
+#fields div .text-input {
+  padding-left: 20px;
+}
+
+#fields div select {
+  appearance: none;
+  -webkit-border-radius: 0px;
+  padding-left: 20px;
+}
+
+#fields div .text-input::placeholder,
+#fields div select option {
+  color: #4b5050;
+  width: 20px;
+  font-size: 12px;
+}
+
+#fields div select {
+  position: relative;
+  left: 5px;
+}
+
+#fields #repo-license:after {
+  font-family: FontAwesome;
+  content: "\f107";
+  font-size: 15px;
+  position: relative;
+  top: 2px;
+  right: 15px;
+  color: #4b5050;
+  pointer-events: none;
+}
+
+/* Custom checkbox for 'include forked' styling starts here */
+#fields #repo-forked {
+  display: block;
+  position: relative;
+  margin-left: -145.5px;
+  padding-top: 5px;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+#fields #repo-forked input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom checkbox */
+#fields #repo-forked #repo-forked-checkmark {
+  position: absolute;
+  top: 0;
+  margin-left: -40px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #4b5050;
+  cursor: pointer;
+}
+
+/* When the checkbox is checked, add a gray background */
+#fields #repo-forked input:checked ~ #repo-forked-checkmark {
+  background-color: #4b5050;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+#fields #repo-forked #repo-forked-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+#fields #repo-forked input:checked ~ #repo-forked-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+#fields #repo-forked-checkmark:after {
+  left: 10px;
+  top: 3px;
+  width: 9px;
+  height: 17px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
