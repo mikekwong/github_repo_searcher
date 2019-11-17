@@ -76,8 +76,10 @@ export default class Search extends Component {
               Search
             </button>
           </div>
+          <div id='line' />
+          <p className='instructions'>Please enter query and click SEARCH</p>
+          <p className='instructions'>button above, results appear here.</p>
         </form>
-        <div id='line' />
       </div>
     )
   }

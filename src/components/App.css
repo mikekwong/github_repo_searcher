@@ -7,18 +7,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
 #App {
 }
 
-#App #header {
+#App #container-header {
   width: 100%;
   height: 70px;
   background-color: #3f87c6;
 }
 
-#App #header #logo {
+#App #container-header #logo {
   display: flex;
   width: 70px;
   position: absolute;
@@ -26,14 +27,25 @@
   top: 25px;
 }
 
-#App #search {
+#App #container-search {
   position: relative;
   top: 44px;
+  height: 670px;
 }
 
-#App #search .headline {
-  font-family: "Helvetica", "Arial", sans-serif;
+#App #container-search .headline {
   font-size: 28px;
   color: #4b5050;
   text-align: center;
+}
+
+#App #container-footer {
+  text-align: center;
+  height: 70px;
+  background-color: #3f87c6;
+  color: #fff;
+  margin-bottom: 8px;
+  vertical-align: middle;
+  line-height: 70px;
+  font-size: 10px;
 }
