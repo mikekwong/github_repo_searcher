@@ -17,7 +17,7 @@
 
 #fields div select {
   appearance: none;
-  -webkit-border-radius: 0px;
+  border-radius: 0px;
   padding-left: 20px;
 }
 

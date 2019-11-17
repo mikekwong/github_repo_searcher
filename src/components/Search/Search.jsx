@@ -6,7 +6,8 @@ export default class Search extends Component {
   state = {
     text: '',
     stars: '',
-    license: ''
+    license: '',
+    forked: false
   }
 
   onFormSubmit = e => {
@@ -14,13 +15,19 @@ export default class Search extends Component {
   }
 
   onChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-    console.log(e.target.value)
+    if (e.target.name === 'forked') {
+      this.setState({
+        forked: !this.state.checked
+      })
+    } else {
+      this.setState({
+        [e.target.name]: e.target.value
+      })
+    }
   }
 
   render () {
+    const { text, stars, license, forked } = this.state
     return (
       <div id='fields'>
         <form onSubmit={this.onFormSubmit}>
@@ -30,7 +37,7 @@ export default class Search extends Component {
               placeholder='name'
               name='text'
               type='text'
-              value={this.state.text}
+              value={text}
               onChange={this.onChange}
             />
           </div>
@@ -40,7 +47,7 @@ export default class Search extends Component {
               placeholder='stars'
               name='stars'
               type='text'
-              value={this.state.stars}
+              value={stars}
               onChange={this.onChange}
             />
           </div>
@@ -51,7 +58,12 @@ export default class Search extends Component {
           </div>
           <div id='repo-forked'>
             <label htmlFor='forked'>
-              <input type='checkbox' id='forked' name='forked' />
+              <input
+                onChange={this.onChange}
+                type='checkbox'
+                id='forked'
+                name='forked'
+              />
               <span id='repo-forked-checkmark' />
               Include Forked
             </label>
