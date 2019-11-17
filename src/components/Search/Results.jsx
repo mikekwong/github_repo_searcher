@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import github from '../../api/github'
+import React from 'react'
 
-export default class Results extends Component {
-  render () {
-    return (
-      <div id='results'>
-        <p>repo name</p>
-        <p>Description</p>
-        <p>Stars: 10088</p>
-        <p>License: MIT License</p>
-      </div>
-    )
-  }
+const Results = ({ result }) => {
+  const { id, full_name, description, stargazers_count, license } = result
+  return (
+    <div key={id} id='results'>
+      <p>{full_name}</p>
+      <p>{description}</p>
+      <p>Stars: {stargazers_count}</p>
+      {license && <p>{license.name}</p>}
+    </div>
+  )
 }
+
+export default Results

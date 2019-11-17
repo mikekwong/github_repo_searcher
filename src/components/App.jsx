@@ -7,18 +7,23 @@ import github from '../api/github'
 
 export default class App extends Component {
   state = {
-    results: []
+    results: [],
+    isLoading: true
   }
 
-  onSearchSubmit = async (text, stars, license, forked) => {
+  onSearchSubmit = async (text, stars, licenses, forked) => {
     try {
+      // const { data } = await github.get(
+      //   `/repositories?q=${text}+${license}+stars:${stars}&fork=${forked}`
+      // )
       const { data } = await github.get(
-        `?q=${text}+${license}+stars:${stars}&forked=${forked}`
+        `/repositories?q=${text}+stars:${stars}&fork=${forked}`
       )
       this.setState({
-        results: data.results,
+        results: data.items,
         isLoading: false
       })
+      console.log(this.state.results)
     } catch (error) {
       this.setState({
         error,
@@ -28,7 +33,8 @@ export default class App extends Component {
   }
 
   render () {
-    const { results } = this.state
+    const { results, isLoading } = this.state
+    console.log(results)
     return (
       <div id='App'>
         <div id='container-header'>
@@ -39,10 +45,12 @@ export default class App extends Component {
           <p className='headline'>Github Repository Search</p>
           <Search onSubmit={this.onSearchSubmit} />
         </div>
-        {results.length ? (
+        {!isLoading ? (
           <div id='container-results'>
             <p>Results:</p>
-            results.map(result => {<Results />})
+            {results.map(result => (
+              <Results result={result} />
+            ))}
           </div>
         ) : (
           <div id='container-footer'>

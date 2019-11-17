@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import License from './License'
 import './Search.css'
-import licenses from '../../api/licenses.json'
+import licenseList from '../../api/licenseList.json'
 
 export default class Search extends Component {
   state = {
     text: '',
     stars: '',
-    license: licenses,
+    licenses: licenseList,
     forked: false
   }
 
   onFormSubmit = e => {
+    const { text, stars, licenses, forked } = this.state
     e.preventDefault()
+    this.props.onSubmit(text, stars, licenses, forked)
   }
 
   onHandleChange = e => {
@@ -54,7 +56,10 @@ export default class Search extends Component {
               onChange={this.onHandleChange}
             />
           </div>
-          <License licenses={license} onHandleChange={this.onHandleChange} />
+          <License
+            licenses={licenseList}
+            onHandleChange={this.onHandleChange}
+          />
           <div id='repo-forked'>
             <label htmlFor='forked'>
               <input
