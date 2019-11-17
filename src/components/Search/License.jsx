@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react'
 
-const License = () => {
+const License = ({ onHandleChange, licenses }) => {
   return (
-    <>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
-    </>
-  );
-};
+    <div id='repo-license' className='fields-input'>
+      <label className='fields-label'>License</label>
+      <select name='license' onChange={onHandleChange}>
+        {licenses.map(license => (
+          <option value={license.keyword}>{license.license}</option>
+        ))}
+      </select>
+    </div>
+  )
+}
 
-export default License;
+export default License

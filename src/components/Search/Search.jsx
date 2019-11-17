@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import License from './License'
 import './Search.css'
+import licenses from '../../api/licenses.json'
 
 export default class Search extends Component {
   state = {
     text: '',
     stars: '',
-    license: '',
+    license: licenses,
     forked: false
   }
 
@@ -53,12 +54,7 @@ export default class Search extends Component {
               onChange={this.onHandleChange}
             />
           </div>
-          <div id='repo-license' className='fields-input'>
-            <label className='fields-label'>License</label>
-            <select name='license' onChange={this.onHandleChange}>
-              <License />
-            </select>
-          </div>
+          <License licenses={license} onHandleChange={this.onHandleChange} />
           <div id='repo-forked'>
             <label htmlFor='forked'>
               <input
