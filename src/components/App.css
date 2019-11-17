@@ -10,7 +10,6 @@
 }
 
 #App {
-  text-align: center;
 }
 
 #App #header {
@@ -36,4 +35,5 @@
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 28px;
   color: #4b5050;
+  text-align: center;
 }

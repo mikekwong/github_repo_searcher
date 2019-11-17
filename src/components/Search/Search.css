@@ -3,12 +3,20 @@
   top: 50px;
 }
 
+#fields form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 322px;
+}
+
 #fields div .text-input,
 #fields div select {
   border: 1px solid #4b5050;
   width: 322px;
   height: 45px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-top: 5px;
 }
 
 #fields div .text-input {
@@ -28,9 +36,14 @@
   font-size: 12px;
 }
 
-#fields div select {
+/* #fields div select {
   position: relative;
   left: 5px;
+} */
+
+#fields .fields-label {
+  color: #4b5050;
+  font-size: 10px;
 }
 
 #fields #repo-license:after {
@@ -48,12 +61,10 @@
 #fields #repo-forked {
   display: block;
   position: relative;
-  margin-left: -145.5px;
+  margin-left: 40px;
   padding-top: 5px;
+  margin-top: -10px;
   font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -102,4 +113,31 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+#fields #repo-button {
+  margin: 0 auto;
+}
+
+#fields #button {
+  position: relative;
+  margin-top: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #3f87c6;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#fields #line {
+  position: relative;
+  width: 322px;
+  height: 1px;
+  background-color: #4b5050;
+  margin: 0 auto;
+  top: 40px;
 }
