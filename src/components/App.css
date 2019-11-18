@@ -46,10 +46,16 @@
 }
 
 #App #container-results {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   color: #4b5050;
-  text-align: center;
   height: 100px;
+  width: 322px;
+}
+
+#App #container-results > p {
+  text-align: center;
 }
 
 #App #container-footer {
