@@ -33,7 +33,6 @@ export default class App extends Component {
 
   render () {
     const { results, resultsHeight, isLoading } = this.state
-    console.log(results)
     return (
       <div id='App'>
         <div id='container-header'>
@@ -48,7 +47,7 @@ export default class App extends Component {
         {!isLoading && results.length ? (
           <div
             id='container-results'
-            style={{ height: `${results.length * 100}px` }}
+            // style={{ height: `${results.length * 400}px` }}
           >
             <p>SEARCH results:</p>
             {results.map(result => (

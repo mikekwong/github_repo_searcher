@@ -1,15 +1,56 @@
 #App #container-results .results-list {
-  height: 50px;
-  margin: 60px 0;
-  padding-left: 12px;
-  height: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  height: 600px;
   border: 1px solid #4b5050;
-  vertical-align: middle;
-  line-height: 50px;
+  position: relative;
+}
+
+#App #container-results .results-list span {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+#App #container-results .results-list #stars {
+  width: 322px;
+  border-top: 1px solid #4b5050;
+  border-bottom: 1px solid #4b5050;
+}
+
+#App #container-results .results-list p {
   font-size: 14px;
 }
 
 #App #container-results .results-list p:first-child {
+  font-size: 16px;
   color: #3f87c6;
   font-weight: bold;
+  margin: 18px 0 14px 12px;
+  position: relative;
+}
+
+#App #container-results .results-list #test {
+  /* display: flex; */
+  font-size: 16px;
+  color: #fff;
+  background-color: #3f87c6;
+  /* justify-content: flex-end; */
+  padding: 0px 18px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+#App #container-results .results-list p:nth-child(2) {
+  line-height: 30px;
+}
+
+#App #container-results .results-list p:nth-last-child(3) {
+  padding: 5px 0 16px 12px;
+}
+
+#App #container-results .results-list p:nth-last-child(2),
+#App #container-results .results-list p:last-child {
+  padding: 22px 0 22px 12px;
 }

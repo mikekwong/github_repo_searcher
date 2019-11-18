@@ -15,7 +15,6 @@ export default class Search extends Component {
     const { text, stars, license, forked } = this.state
     e.preventDefault()
     this.props.onSubmit(text, stars, license, forked)
-    console.log(license)
   }
 
   onHandleChange = e => {
