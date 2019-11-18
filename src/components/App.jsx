@@ -45,18 +45,24 @@ export default class App extends Component {
           <p className='headline'>Github Repository Search</p>
           <Search onSubmit={this.onSearchSubmit} />
         </div>
-        {!isLoading ? (
-          <div id='container-results'>
+        {!isLoading && results.length ? (
+          // <div id='container-results'>
+          <>
             <p>Results:</p>
             {results.map(result => (
               <Results result={result} />
             ))}
-          </div>
+          </>
         ) : (
-          <div id='container-footer'>
-            <footer>&copy; 2017 Even Financial, Inc. - CONFIDENTIAL</footer>
+          // </div>
+          <div id='container-instructions'>
+            <p>Please enter query and click SEARCH</p>
+            <p>button above, results appear here.</p>
           </div>
         )}
+        <div id='container-footer'>
+          <footer>&copy; 2017 Even Financial, Inc. - CONFIDENTIAL</footer>
+        </div>
       </div>
     )
   }

@@ -30,13 +30,26 @@
 #App #container-search {
   position: relative;
   top: 44px;
-  height: 670px;
+  height: 590px;
 }
 
 #App #container-search .headline {
   font-size: 28px;
   color: #4b5050;
   text-align: center;
+}
+
+#App #container-instructions {
+  color: #4b5050;
+  text-align: center;
+  height: 80px;
+}
+
+#App #container-results {
+  display: block;
+  color: #4b5050;
+  text-align: center;
+  height: 100px;
 }
 
 #App #container-footer {

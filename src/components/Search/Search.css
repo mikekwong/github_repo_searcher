@@ -1,7 +1,6 @@
 #fields {
   position: relative;
   top: 50px;
-  margin-bottom: 40px;
 }
 
 #fields form {
@@ -129,7 +128,4 @@
   margin: 40px 0;
 }
 
-#fields .instructions {
-  color: #4b5050;
-  text-align: center;
-}
+

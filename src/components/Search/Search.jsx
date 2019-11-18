@@ -8,7 +8,12 @@ export default class Search extends Component {
     text: '',
     stars: '',
     licenses: licenseList,
-    forked: false
+    forked: false,
+    resultsHeight: 0
+  }
+
+  componentDidMount () {
+    // this.setState({resultsHeight: `${40 * document.getElementsByClassName('.results-list').length}px`})
   }
 
   onFormSubmit = e => {
@@ -78,8 +83,6 @@ export default class Search extends Component {
             </button>
           </div>
           <div id='line' />
-          <p className='instructions'>Please enter query and click SEARCH</p>
-          <p className='instructions'>button above, results appear here.</p>
         </form>
       </div>
     )
