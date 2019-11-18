@@ -9,13 +9,19 @@ export default class Search extends Component {
     stars: '',
     license: licenseList,
     forked: false,
-    starsInvalid: false
+    starsInvalid: false,
+    textInvalid: false
   }
 
   onFormSubmit = e => {
     const { text, stars, license, forked } = this.state
     e.preventDefault()
-    this.props.onSubmit(text, stars, license, forked)
+    if (text && stars) {
+      this.props.onSubmit(text, stars, license, forked)
+      this.setState({ textInvalid: false, starsInvalid: false })
+    } else {
+      this.setState({ textInvalid: true, starsInvalid: true })
+    }
   }
 
   onHandleChange = e => {
@@ -42,13 +48,14 @@ export default class Search extends Component {
   }
 
   render() {
-    const { text, stars, license, forked, starsInvalid } = this.state
+    const { text, stars, license, forked, textInvalid, starsInvalid } = this.state
     return (
       <div id='fields'>
         <form onSubmit={this.onFormSubmit}>
           <div id='repo-name' className='fields-input'>
             <label className='fields-label'>Text</label>
             <input
+              style={{ border: textInvalid && '1px solid red' }}
               className='text-input'
               placeholder='name'
               name='text'
@@ -56,10 +63,12 @@ export default class Search extends Component {
               value={text}
               onChange={this.onHandleChange}
             />
+            {textInvalid && <p className='warning'>This input field is not valid.</p>}
           </div>
           <div id='repo-stars' className='fields-input'>
             <label className='fields-label'>Stars</label>
             <input
+              style={{ border: textInvalid || starsInvalid ? '1px solid red' : null }}
               className='text-input'
               placeholder='stars'
               name='stars'
@@ -68,7 +77,7 @@ export default class Search extends Component {
               onBlur={this.onStarsInputBlur}
               onChange={this.onHandleChange}
             />
-            {starsInvalid && <p id='warning'>Your input is invalid!</p>}
+            {starsInvalid && <p className='warning'>This input field is not valid.</p>}
           </div>
           <License
             licenses={licenseList}

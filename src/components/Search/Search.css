@@ -127,8 +127,9 @@
   margin: 40px 0;
 }
 
-#fields #repo-stars #warning {
+#fields .warning {
   color: red;
   font-size: 12px;
   margin-bottom: 15px;
 }
+
