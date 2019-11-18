@@ -27,8 +27,7 @@
   appearance: none;
   border-radius: 0px;
   padding-left: 20px;
-  background: url("https://img.icons8.com/metro/26/000000/expand-arrow.png") 96% /
-    3% no-repeat;
+  background: url("/assets/arrow.png") 96% / 3% no-repeat;
 }
 
 #fields div .text-input::placeholder,
