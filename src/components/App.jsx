@@ -4,36 +4,35 @@ import Search from './Search/Search'
 import logo from './assets/logo.png'
 import Results from './Search/Results'
 import github from '../api/github'
+import loader from './assets/loader.svg'
 
 export default class App extends Component {
   state = {
     results: [],
-    isLoading: true
+    isLoading: false,
+    error: null
   }
 
-  onSearchSubmit = async (text, stars, licenses, forked) => {
+  onSearchSubmit = async (text, stars, license, forked) => {
+    const { data } = await github.get(
+      `/repositories?q=${text}+stars:${stars}+license:${license}+fork:${forked}`
+    )
     try {
-      // const { data } = await github.get(
-      //   `/repositories?q=${text}+${license}+stars:${stars}&fork=${forked}`
-      // )
-      const { data } = await github.get(
-        `/repositories?q=${text}+stars:${stars}&fork=${forked}`
-      )
       this.setState({
-        results: data.items,
-        isLoading: false
+        isLoading: true,
+        results: data.items
       })
-      console.log(this.state.results)
     } catch (error) {
       this.setState({
-        error,
-        isLoading: false
+        isLoading: true,
+        error
       })
     }
+    this.setState({ isLoading: false })
   }
 
   render () {
-    const { results, isLoading } = this.state
+    const { results, resultsHeight, isLoading } = this.state
     console.log(results)
     return (
       <div id='App'>
@@ -45,16 +44,18 @@ export default class App extends Component {
           <p className='headline'>Github Repository Search</p>
           <Search onSubmit={this.onSearchSubmit} />
         </div>
+        {isLoading && results.length === 0 && <img src={loader} alt='loader' />}
         {!isLoading && results.length ? (
-          // <div id='container-results'>
-          <>
-            <p>Results:</p>
+          <div
+            id='container-results'
+            style={{ height: `${results.length * 100}px` }}
+          >
+            <p>SEARCH results:</p>
             {results.map(result => (
-              <Results result={result} />
+              <Results key={result.id} result={result} />
             ))}
-          </>
+          </div>
         ) : (
-          // </div>
           <div id='container-instructions'>
             <p>Please enter query and click SEARCH</p>
             <p>button above, results appear here.</p>

@@ -6,7 +6,9 @@ const License = ({ onHandleChange, licenses }) => {
       <label className='fields-label'>License</label>
       <select name='license' onChange={onHandleChange}>
         {licenses.map(license => (
-          <option value={license.keyword}>{license.license}</option>
+          <option key={license.keyword} value={license.keyword}>
+            {license.license}
+          </option>
         ))}
       </select>
     </div>

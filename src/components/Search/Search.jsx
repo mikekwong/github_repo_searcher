@@ -7,25 +7,21 @@ export default class Search extends Component {
   state = {
     text: '',
     stars: '',
-    licenses: licenseList,
-    forked: false,
-    resultsHeight: 0
-  }
-
-  componentDidMount () {
-    // this.setState({resultsHeight: `${40 * document.getElementsByClassName('.results-list').length}px`})
+    license: licenseList,
+    forked: false
   }
 
   onFormSubmit = e => {
-    const { text, stars, licenses, forked } = this.state
+    const { text, stars, license, forked } = this.state
     e.preventDefault()
-    this.props.onSubmit(text, stars, licenses, forked)
+    this.props.onSubmit(text, stars, license, forked)
+    console.log(license)
   }
 
   onHandleChange = e => {
     if (e.target.name === 'forked') {
       this.setState({
-        forked: !this.state.checked
+        forked: !this.state.forked
       })
     } else {
       this.setState({
