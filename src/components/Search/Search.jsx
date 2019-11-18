@@ -8,7 +8,8 @@ export default class Search extends Component {
     text: '',
     stars: '',
     license: licenseList,
-    forked: false
+    forked: false,
+    starsInvalid: false
   }
 
   onFormSubmit = e => {
@@ -29,8 +30,19 @@ export default class Search extends Component {
     }
   }
 
-  render () {
-    const { text, stars, license, forked } = this.state
+  onStarsInputBlur = e => {
+    const inputCriteria = /^(\d+$)|(\d+\..\d+$)|(\d+\..\*$)|(>|<|>=|<=|\*..|\..)\d+$/
+    if (e.target.value) {
+      if (!e.target.value.match(inputCriteria)) {
+        this.setState({ starsInvalid: true })
+      } else {
+        this.setState({ starsInvalid: false })
+      }
+    }
+  }
+
+  render() {
+    const { text, stars, license, forked, starsInvalid } = this.state
     return (
       <div id='fields'>
         <form onSubmit={this.onFormSubmit}>
@@ -53,8 +65,10 @@ export default class Search extends Component {
               name='stars'
               type='text'
               value={stars}
+              onBlur={this.onStarsInputBlur}
               onChange={this.onHandleChange}
             />
+            {starsInvalid && <p id='warning'>Your input is invalid!</p>}
           </div>
           <License
             licenses={licenseList}

@@ -126,3 +126,9 @@
   background-color: #4b5050;
   margin: 40px 0;
 }
+
+#fields #repo-stars #warning {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
