@@ -43,12 +43,12 @@
 }
 
 #App #container-instructions {
-  height: 70px;
+  height: 80px;
   margin-top: 40px;
 }
 
 #App #container-results {
-  margin: 50px auto 35px auto;
+  margin: 40px auto 35px auto;
   color: #4b5050;
   width: 322px;
 }
@@ -61,6 +61,12 @@
 #App #noresults {
   text-align: center;
   margin: 44px 0 34px 0;
+}
+
+#App #error {
+  text-align: center;
+  color: red;
+  margin-bottom: 44px;
 }
 
 #App #container-footer {
@@ -81,7 +87,7 @@
   margin: 40px auto;
 }
 
-@media (min-width: 1920px) {
+@media only screen and (min-width: 1920px) {
   #App #container-header #logo {
     left: 320px;
   }
@@ -100,8 +106,12 @@
     margin: 130px auto 80px auto;
   }
 
-  #App #container-instructions {
-    padding-bottom: 80px;
+  /* #App #container-instructions {
+    height:
+  } */
+
+  #App #container-results > p {
+    margin-bottom: 50px;
   }
 
   #App #container-footer {

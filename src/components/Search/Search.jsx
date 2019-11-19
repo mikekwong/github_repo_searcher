@@ -42,15 +42,16 @@ export default class Search extends Component {
         [e.target.name]: e.target.value
       })
     }
-    this.inputValidation()
+    // Call to clear field warnings when typing
+    this.inputValidation(e)
   }
 
-  inputValidation () {
+  inputValidation (e) {
     const { text, stars } = this.state
-    if (text.length) {
+    if (e.target.value && e.target.name === 'text') {
       this.setState({ textInvalid: false })
     }
-    if (stars.length) {
+    if (e.target.value && e.target.name === 'stars') {
       this.setState({
         starsInvalid: false,
         starsInvalidChars: false,

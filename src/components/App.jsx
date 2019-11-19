@@ -1,39 +1,62 @@
 import React, { Component } from 'react'
 import './App.css'
 import Search from './Search/Search'
+import Loader from './Search/Loader'
 import logo from './assets/logo.png'
 import Results from './Search/Results'
 import github from '../api/github'
-import loader from './assets/loader.svg'
-
 export default class App extends Component {
   state = {
     results: [],
-    isLoading: false,
+    isLoading: true,
     error: null,
-    searchSubmitted: false
+    searchSubmitted: false,
+    noResults: false
   }
 
   onSearchSubmit = async (text, stars, license, forked) => {
-    const { data } = await github.get(
-      `/repositories?q=${text}+stars:${stars}+license:${license}+fork:${forked}`
-    )
+    // Reset these states in case a new search is submitted after existing one
+    this.setState({ searchSubmitted: true, error: null, noResults: false })
     try {
+      const { data } = await github.get(
+        `/repositories?q=${text}+stars:${stars}+license:${license}+fork:${forked}`
+      )
       this.setState({
-        isLoading: true,
-        results: data.items
+        results: data.items,
+        isLoading: false
       })
+      if (data.items.length === 0) {
+        this.setState({ noResults: true })
+      } else {
+        this.setState({ noResults: false })
+      }
     } catch (error) {
       this.setState({
-        isLoading: true,
-        error
+        error,
+        isLoading: false
       })
     }
-    this.setState({ isLoading: false, searchSubmitted: true })
+    // Return to normal states to signify search has finished
+    this.setState({ isLoading: true, searchSubmitted: false })
   }
 
   render () {
-    const { results, isLoading, searchSubmitted } = this.state
+    const { results, isLoading, searchSubmitted, error, noResults } = this.state
+
+    let searchContent
+    if (searchSubmitted && isLoading) {
+      searchContent = <Loader />
+    } else {
+      searchContent = (
+        <div id='container-results'>
+          <p>SEARCH results:</p>
+          {results.map(result => (
+            <Results key={result.id} result={result} />
+          ))}
+        </div>
+      )
+    }
+
     return (
       <div id='App'>
         <div id='container-header'>
@@ -48,19 +71,10 @@ export default class App extends Component {
           <Search onSubmit={this.onSearchSubmit} />
         </div>
         <div id='line' />
-        {isLoading && results.length === 0 && <img src={loader} alt='loader' />}
-        {searchSubmitted && results.length > 0 && (
-          <div id='container-results'>
-            <p>SEARCH results:</p>
-            {results.map(result => (
-              <Results key={result.id} result={result} />
-            ))}
-          </div>
-        )}
-        {searchSubmitted && results.length === 0 && (
-          <p id='noresults'>No Results Found.</p>
-        )}
-        {!searchSubmitted && (
+        {searchContent}
+        {noResults && <p id='noresults'>No Results Found.</p>}
+        {error && <p id='error'>{error.response.data.errors[0].message}</p>}
+        {!error && !searchSubmitted && (
           <div id='container-instructions'>
             <p>
               Please enter query and click SEARCH{' '}
