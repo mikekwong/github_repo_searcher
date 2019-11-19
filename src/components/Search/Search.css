@@ -128,8 +128,9 @@
 }
 
 #fields .warning {
+  position: relative;
+  top: -10px;
   color: red;
   font-size: 12px;
-  margin-bottom: 15px;
 }
 

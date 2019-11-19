@@ -42,7 +42,7 @@
 #App #container-instructions {
   color: #4b5050;
   text-align: center;
-  height: 80px;
+  height: 70px;
   margin-top: 40px;
 }
 
@@ -60,7 +60,7 @@
 
 #App #container-footer {
   /* position: relative; */
-  bottom: 5px;
+  /* bottom: 5px; */
   text-align: center;
   /* margin-top: 20px; */
   /* height: 70px; */
