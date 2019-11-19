@@ -1,0 +1,86 @@
+@import "../index.scss";
+
+#App {
+  #container-search {
+    margin-top: 44px;
+    #headline {
+      @include center-text-gray;
+      font-size: 28px;
+    }
+    p span:before {
+      @include line-break;
+    }
+  }
+  #container-instructions {
+    height: 80px;
+    margin-top: 40px;
+    @include center-text-gray;
+    p span:before {
+      @include line-break;
+    }
+  }
+  #container-results {
+    margin: 40px auto 35px auto;
+    color: $gray-color;
+    width: 322px;
+    > p {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+  }
+  #noresults {
+    text-align: center;
+    margin: 44px 0 34px 0;
+  }
+  #error {
+    text-align: center;
+    color: $warning-color;
+    margin-bottom: 44px;
+  }
+  #container-footer {
+    text-align: center;
+    background-color: $blue-color;
+    color: $white-color;
+    vertical-align: middle;
+    padding: 30px 0;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  #line {
+    position: relative;
+    width: 322px;
+    height: 1px;
+    background-color: $gray-color;
+    margin: 40px auto;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #App {
+    #container-header #logo {
+      left: 320px;
+    }
+    #container-search {
+      p span::before {
+        @include no-line-break;
+      }
+      #headline {
+        font-size: 38px;
+      }
+    }
+    #container-instructions p span::before {
+      @include no-line-break;
+    }
+    #line {
+      width: 1284px;
+      margin: 130px auto 80px auto;
+    }
+    #container-results > p {
+      margin-bottom: 50px;
+    }
+    #container-footer {
+      font-size: 16px;
+      margin-bottom: 42px;
+    }
+  }
+}

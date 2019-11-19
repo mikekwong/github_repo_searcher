@@ -1,0 +1,49 @@
+$gray-color: #4b5050;
+$blue-color: #3f87c6;
+$warning-color: red;
+$white-color: #fff;
+$pixel-border: 1px solid $gray-color;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin center-text-gray {
+  text-align: center;
+  color: $gray-color;
+}
+
+@mixin line-break {
+  content: "\A";
+  white-space: pre;
+}
+
+@mixin no-line-break {
+  white-space: normal;
+}
+
+@mixin select-style {
+  border: 1px solid $gray-color;
+  width: 322px;
+  height: 45px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  color: $gray-color;
+}
+
+@mixin placeholder-style {
+  width: 20px;
+  font-size: 12px;
+}
+
+// CSS Resets
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-family: "Helvetica", "Arial", sans-serif;
+}

@@ -1,0 +1,141 @@
+@import "../../index.scss";
+
+#App {
+  #container-fields {
+    position: relative;
+    top: 50px;
+    form {
+      @include flex-column;
+      margin: 0 auto;
+      width: 322px;
+      div {
+        .text-input {
+          @include select-style;
+          padding-left: 20px;
+        }
+        select {
+          @include select-style;
+          cursor: pointer;
+          appearance: none;
+          border-radius: 0px;
+          padding-left: 20px;
+          background: url("/assets/arrow.png") 96% / 3% no-repeat;
+          option {
+            @include placeholder-style;
+          }
+        }
+        .text-input::placeholder {
+          @include placeholder-style;
+        }
+      }
+      .fields .fields-label {
+        font-size: 10px;
+      }
+      /* Custom checkbox for 'include forked' styling starts here */
+      #repo-forked {
+        color: $gray-color;
+        display: block;
+        position: relative;
+        margin-left: 40px;
+        padding-top: 7px;
+        margin-top: 8px;
+        font-size: 14px;
+        user-select: none;
+        /* Hide the browser's default checkbox */
+        input {
+          position: absolute;
+          opacity: 0;
+        }
+        #repo-forked-checkmark {
+          position: absolute;
+          top: 0;
+          margin-left: -40px;
+          height: 30px;
+          width: 30px;
+          border: 1px solid $gray-color;
+          cursor: pointer;
+          /* Create the checkmark/indicator (hidden when not checked) */
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            /* Style the checkmark/indicator */
+            left: 8px;
+            top: 0px;
+            width: 12px;
+            height: 22px;
+            border: solid #3f87c6;
+            border-width: 0 2px 2px 0;
+            transform: rotate(40deg);
+          }
+        }
+        /* Show the checkmark when checked */
+        input:checked ~ #repo-forked-checkmark:after {
+          display: block;
+        }
+      }
+      #repo-submit {
+        margin: 0 auto;
+      }
+      #button {
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #3f87c6;
+        width: 120px;
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 10px;
+      }
+      .warning {
+        position: relative;
+        top: -10px;
+        color: $warning-color;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #App {
+    #container-fields {
+      position: relative;
+      top: 50px;
+      form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 900px;
+        justify-content: center;
+        .fields {
+          width: 450px;
+          margin-top: 10px;
+          text-align: center;
+          .fields-label {
+            position: absolute;
+            margin-top: -10px;
+          }
+        }
+        #repo-forked {
+          width: 345px;
+          margin-top: 20px;
+          margin-left: 105px;
+        }
+        .warning {
+          text-align: left;
+          left: 65px;
+        }
+        #button {
+          margin: 80px 600px 0 600px;
+          width: 120px;
+        }
+      }
+    }
+  }
+}

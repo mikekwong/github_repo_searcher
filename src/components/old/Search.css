@@ -12,12 +12,12 @@
 
 #App #container-fields form div .text-input,
 #App #container-fields form div select {
-  border: 1px solid #4b5050;
+  border: 1px solid $gray-color;
   width: 322px;
   height: 45px;
   margin-bottom: 15px;
   margin-top: 5px;
-  color: #4b5050;
+  color: $gray-color;
 }
 
 #App #container-fields form div .text-input {
@@ -44,7 +44,7 @@
 
 /* Custom checkbox for 'include forked' styling starts here */
 #App #container-fields form #repo-forked {
-  color: #4b5050;
+  color: $gray-color;
   display: block;
   position: relative;
   margin-left: 40px;
@@ -67,7 +67,7 @@
   margin-left: -40px;
   height: 30px;
   width: 30px;
-  border: 1px solid #4b5050;
+  border: 1px solid $gray-color;
   cursor: pointer;
 }
 

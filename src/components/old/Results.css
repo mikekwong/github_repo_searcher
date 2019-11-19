@@ -19,7 +19,7 @@
   font-size: 14px;
 }
 
-#App #container-results .results-list p:first-child {
+#App #container-results .results-list #name {
   font-size: 16px;
   color: #3f87c6;
   font-weight: bold;
@@ -39,7 +39,6 @@
 
 #App #container-results .results-list #description {
   padding: 4px 0 16px 12px;
-  /* line-height: 28px; */
 }
 
 #App #container-results .results-list #stars,
@@ -55,12 +54,10 @@
 
   #App #container-results .results-list {
     display: flex;
-    /* height: 100px; */
   }
 
   #App #container-results .results-list p {
     font-size: 14px;
-    /* margin-bottom: 50px; */
   }
 
   #App #container-results .results-list #name-description-fork {
@@ -84,7 +81,6 @@
     padding-left: 0;
     margin: 0;
     padding-top: 30px;
-    /* line-height: 30px; */
   }
 
   #App #container-results .results-list #stars span,
