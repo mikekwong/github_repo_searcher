@@ -11,7 +11,6 @@ export default class App extends Component {
     results: [],
     isLoading: false,
     error: null,
-    height: 0,
     searchSubmitted: false
   }
 
@@ -34,7 +33,7 @@ export default class App extends Component {
   }
 
   render () {
-    const { results, resultsHeight, isLoading, searchSubmitted } = this.state
+    const { results, isLoading, searchSubmitted } = this.state
     return (
       <div id='App'>
         <div id='container-header'>

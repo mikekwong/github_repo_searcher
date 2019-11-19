@@ -8,7 +8,6 @@ export default class Search extends Component {
     text: '',
     stars: '',
     license: licenseList,
-    forked: false,
     starsInvalidChars: false,
     starsRangeWrong: false,
     textInvalid: false,
@@ -34,7 +33,6 @@ export default class Search extends Component {
   }
 
   onHandleChange = e => {
-    const { text, stars } = this.state
     if (e.target.name === 'forked') {
       this.setState({
         forked: !this.state.forked
@@ -90,8 +88,6 @@ export default class Search extends Component {
     const {
       text,
       stars,
-      license,
-      forked,
       textInvalid,
       starsInvalid,
       starsInvalidChars,
