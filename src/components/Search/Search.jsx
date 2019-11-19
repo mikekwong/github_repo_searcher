@@ -98,9 +98,9 @@ export default class Search extends Component {
       starsRangeWrong
     } = this.state
     return (
-      <div id='fields'>
+      <div id='container-fields'>
         <form onSubmit={this.onFormSubmit}>
-          <div id='repo-name' className='fields-input'>
+          <div id='repo-name' className='fields'>
             <label className='fields-label'>Text</label>
             <input
               style={{ border: textInvalid && '1px solid red' }}
@@ -115,7 +115,7 @@ export default class Search extends Component {
               <p className='warning'>This input field is not valid.</p>
             )}
           </div>
-          <div id='repo-stars' className='fields-input'>
+          <div id='repo-stars' className='fields'>
             <label className='fields-label'>Stars</label>
             <input
               style={{

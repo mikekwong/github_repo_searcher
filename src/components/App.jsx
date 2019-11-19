@@ -43,8 +43,9 @@ export default class App extends Component {
           </a>
         </div>
         <div id='container-search'>
-          <p className='headline'>Even Financial</p>
-          <p className='headline'>Github Repository Search</p>
+          <p id='headline'>
+            Even Financial <span>Github Repository Search</span>
+          </p>
           <Search onSubmit={this.onSearchSubmit} />
         </div>
         {isLoading && results.length === 0 && <img src={loader} alt='loader' />}
@@ -61,8 +62,10 @@ export default class App extends Component {
         )}
         {!searchSubmitted && (
           <div id='container-instructions'>
-            <p>Please enter query and click SEARCH</p>
-            <p>button above, results appear here.</p>
+            <p>
+              Please enter query and click SEARCH{' '}
+              <span>button above, results appear here.</span>
+            </p>
           </div>
         )}
         <div id='container-footer'>

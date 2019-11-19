@@ -33,10 +33,16 @@
   /* height: 600px; */
 }
 
-#App #container-search .headline {
+#App #container-search #headline {
   font-size: 28px;
   color: #4b5050;
   text-align: center;
+}
+
+#App #container-search p span::before,
+#App #container-instructions p span:before {
+  content: "\A";
+  white-space: pre;
 }
 
 #App #container-instructions {
@@ -75,6 +81,29 @@
   color: #fff;
   /* margin-bottom: 8px; */
   vertical-align: middle;
-  line-height: 70px;
+  padding: 30px 0;
   font-size: 10px;
+}
+
+@media (min-width: 1920px) {
+  #App #container-header #logo {
+    left: 320px;
+  }
+
+  #App #container-search #headline {
+    font-size: 38px;
+  }
+
+  #App #container-search p span::before,
+  #App #container-instructions p span::before {
+    white-space: normal;
+  }
+
+  #App #container-instructions {
+    padding-bottom: 80px;
+  }
+
+  #App #container-footer {
+    font-size: 16px;
+  }
 }
