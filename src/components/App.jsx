@@ -10,7 +10,8 @@ export default class App extends Component {
   state = {
     results: [],
     isLoading: false,
-    error: null
+    error: null,
+    height: 0
   }
 
   onSearchSubmit = async (text, stars, license, forked) => {
@@ -31,6 +32,18 @@ export default class App extends Component {
     this.setState({ isLoading: false })
   }
 
+  getResultsSumHeight () {
+    let results = document.getElementsByClassName('results-list')
+
+    for (let i = 0; i < results.length; i++) {
+      console.log(results.length)
+      console.log(results[i])
+      // total += results[i].offsetHeight
+      // console.log(total)
+      // return total
+    }
+  }
+
   render () {
     const { results, resultsHeight, isLoading } = this.state
     return (
@@ -47,7 +60,9 @@ export default class App extends Component {
         {!isLoading && results.length ? (
           <div
             id='container-results'
-            // style={{ height: `${results.length * 400}px` }}
+            style={{
+              height: results.length && `${this.getResultsSumHeight()}px`
+            }}
           >
             <p>SEARCH results:</p>
             {results.map(result => (
