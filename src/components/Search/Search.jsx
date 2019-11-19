@@ -47,7 +47,6 @@ export default class Search extends Component {
   }
 
   inputValidation (e) {
-    const { text, stars } = this.state
     if (e.target.value && e.target.name === 'text') {
       this.setState({ textInvalid: false })
     }
