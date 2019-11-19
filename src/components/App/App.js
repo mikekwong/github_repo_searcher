@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.scss";
-import Header from "./Header/Header";
-import Search from "./Search/Search";
-import Loader from "./Loader/Loader";
-import Results from "./Results/Results";
-import github from "../api/github";
+import Header from "../Header/Header";
+import Search from "../Search/Search";
+import Loader from "../Loader/Loader";
+import Results from "../Results/Results";
+import github from "../../api/github";
 
 export default class App extends Component {
   state = {
