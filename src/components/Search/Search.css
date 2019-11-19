@@ -24,6 +24,7 @@
 }
 
 #fields div select {
+  cursor: pointer;
   appearance: none;
   border-radius: 0px;
   padding-left: 20px;
@@ -133,4 +134,3 @@
   color: red;
   font-size: 12px;
 }
-

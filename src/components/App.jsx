@@ -11,7 +11,8 @@ export default class App extends Component {
     results: [],
     isLoading: false,
     error: null,
-    height: 0
+    height: 0,
+    searchSubmitted: false
   }
 
   onSearchSubmit = async (text, stars, license, forked) => {
@@ -29,11 +30,11 @@ export default class App extends Component {
         error
       })
     }
-    this.setState({ isLoading: false })
+    this.setState({ isLoading: false, searchSubmitted: true })
   }
 
   render () {
-    const { results, resultsHeight, isLoading } = this.state
+    const { results, resultsHeight, isLoading, searchSubmitted } = this.state
     return (
       <div id='App'>
         <div id='container-header'>
@@ -45,14 +46,18 @@ export default class App extends Component {
           <Search onSubmit={this.onSearchSubmit} />
         </div>
         {isLoading && results.length === 0 && <img src={loader} alt='loader' />}
-        {!isLoading && results.length ? (
+        {searchSubmitted && results.length > 0 && (
           <div id='container-results'>
             <p>SEARCH results:</p>
             {results.map(result => (
               <Results key={result.id} result={result} />
             ))}
           </div>
-        ) : (
+        )}
+        {searchSubmitted && results.length === 0 && (
+          <p id='noresults'>No Results Found.</p>
+        )}
+        {!searchSubmitted && (
           <div id='container-instructions'>
             <p>Please enter query and click SEARCH</p>
             <p>button above, results appear here.</p>

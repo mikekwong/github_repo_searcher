@@ -60,6 +60,11 @@
   margin-bottom: 35px;
 }
 
+#App #noresults {
+  text-align: center;
+  margin: 44px 0 34px 0;
+}
+
 #App #container-footer {
   /* position: relative; */
   /* bottom: 5px; */
