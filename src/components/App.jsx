@@ -33,15 +33,22 @@ export default class App extends Component {
   }
 
   getResultsSumHeight () {
-    let results = document.getElementsByClassName('results-list')
+    var results = document.getElementsByClassName('results-list')
+    let total = 0
+    console.log(results)
 
-    for (let i = 0; i < results.length; i++) {
-      console.log(results.length)
-      console.log(results[i])
-      // total += results[i].offsetHeight
-      // console.log(total)
-      // return total
+    for (const result of results) {
+      console.log(result)
     }
+
+    // for (let i = 0; i < results.length; i++) {
+    // console.log(results[i])
+    //   console.log(results.length)
+    //   console.log(results[i])
+    //   total += results[i].offsetHeight
+    //   console.log(total)
+    //   return total
+    // }
   }
 
   render () {

@@ -47,11 +47,12 @@
 }
 
 #App #container-results {
-  /* display: flex;
-  flex-direction: column; */
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
   color: #4b5050;
   width: 322px;
+  height: auto;
 }
 
 #App #container-results > p {
