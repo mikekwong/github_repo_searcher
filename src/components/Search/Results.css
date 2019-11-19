@@ -1,8 +1,5 @@
 #App #container-results .results-list {
-  /* display: flex;
-  flex-wrap: wrap; */
   margin: 20px 0;
-  /* height: 1000px; */
   border: 1px solid #4b5050;
   position: relative;
 }
@@ -26,16 +23,14 @@
   font-size: 16px;
   color: #3f87c6;
   font-weight: bold;
-  margin: 18px 0 14px 12px;
+  margin: 21px 0 14px 12px;
   position: relative;
 }
 
 #App #container-results .results-list #forked {
-  /* display: flex; */
   font-size: 16px;
   color: #fff;
   background-color: #3f87c6;
-  /* justify-content: flex-end; */
   padding: 6px 19px;
   position: absolute;
   right: 12px;
@@ -44,7 +39,7 @@
 
 #App #container-results .results-list #description {
   padding: 4px 0 16px 12px;
-  line-height: 28px;
+  /* line-height: 28px; */
 }
 
 #App #container-results .results-list #stars,
@@ -58,22 +53,20 @@
     margin-bottom: 55px;
   }
 
-  #App #container-results p {
-    margin-bottom: 50px;
-  }
-
   #App #container-results .results-list {
     display: flex;
-    height: 100px;
+    /* height: 100px; */
   }
 
   #App #container-results .results-list p {
     font-size: 14px;
+    /* margin-bottom: 50px; */
   }
 
-  #App #container-results #name-description-fork {
+  #App #container-results .results-list #name-description-fork {
     width: 990px;
     margin-left: 8px;
+    line-height: 22px;
   }
 
   #App #container-results .results-list #forked {
@@ -87,15 +80,17 @@
     display: flex;
     flex-direction: column;
     width: 147px;
-    height: 99px;
+    height: auto;
     padding-left: 0;
     margin: 0;
-    line-height: 30px;
+    padding-top: 30px;
+    /* line-height: 30px; */
   }
 
   #App #container-results .results-list #stars span,
   #App #container-results .results-list #license span {
     padding-left: 0;
+    padding: 12px 0;
   }
 
   #App #container-results .results-list #stars {

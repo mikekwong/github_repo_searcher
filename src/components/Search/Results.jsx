@@ -7,8 +7,8 @@ const Results = ({ result }) => {
     <div className='results-list'>
       <div id='name-description-fork'>
         <p>{full_name}</p>
-        {/* {fork && <p id='forked'>forked</p>} */}
-        <p id='forked'>forked</p>
+        {fork && <p id='forked'>forked</p>}
+        {/* <p id='forked'>forked</p> */}
         <p id='description'>{description || 'No description.'}</p>
       </div>
 

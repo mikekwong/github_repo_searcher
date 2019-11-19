@@ -1,17 +1,18 @@
-#container-fields {
+#App #container-fields {
   position: relative;
   top: 50px;
 }
 
-#container-fields form {
+#App #container-fields form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 322px;
+  color: #4b5050;
 }
 
-#container-fields div .text-input,
-#container-fields div select {
+#App #container-fields form div .text-input,
+#App #container-fields form div select {
   border: 1px solid #4b5050;
   width: 322px;
   height: 45px;
@@ -19,11 +20,11 @@
   margin-top: 5px;
 }
 
-#container-fields div .text-input {
+#App #container-fields form div .text-input {
   padding-left: 20px;
 }
 
-#container-fields div select {
+#App #container-fields form div select {
   cursor: pointer;
   appearance: none;
   border-radius: 0px;
@@ -31,25 +32,18 @@
   background: url("/assets/arrow.png") 96% / 3% no-repeat;
 }
 
-#container-fields div .text-input::placeholder,
-#container-fields div select option {
-  color: #4b5050;
+#App #container-fields form div .text-input::placeholder,
+#App #container-fields form div select option {
   width: 20px;
   font-size: 12px;
 }
 
-/* #container-fields div select {
-  position: relative;
-  left: 5px;
-} */
-
-#container-fields form .fields .fields-label {
-  color: #4b5050;
+#App #container-fields form .fields .fields-label {
   font-size: 10px;
 }
 
 /* Custom checkbox for 'include forked' styling starts here */
-#container-fields #repo-forked {
+#App #container-fields form #repo-forked {
   display: block;
   position: relative;
   margin-left: 40px;
@@ -60,13 +54,13 @@
 }
 
 /* Hide the browser's default checkbox */
-#container-fields #repo-forked input {
+#App #container-fields form #repo-forked input {
   position: absolute;
   opacity: 0;
 }
 
 /* Create a custom checkbox */
-#container-fields #repo-forked #repo-forked-checkmark {
+#App #container-fields form #repo-forked #repo-forked-checkmark {
   position: absolute;
   top: 0;
   margin-left: -40px;
@@ -77,19 +71,24 @@
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-#container-fields #repo-forked #repo-forked-checkmark:after {
+#App #container-fields form #repo-forked #repo-forked-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the checkmark when checked */
-#container-fields #repo-forked input:checked ~ #repo-forked-checkmark:after {
+#App
+  #container-fields
+  form
+  #repo-forked
+  input:checked
+  ~ #repo-forked-checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-#container-fields #repo-forked-checkmark:after {
+#App #container-fields form #repo-forked-checkmark:after {
   left: 8px;
   top: 0px;
   width: 12px;
@@ -101,11 +100,11 @@
   transform: rotate(40deg);
 }
 
-#container-fields #repo-button {
+#App #container-fields form #repo-submit {
   margin: 0 auto;
 }
 
-#container-fields #button {
+#App #container-fields form #button {
   position: relative;
   margin-top: 30px;
   margin-bottom: 50px;
@@ -121,7 +120,7 @@
   font-size: 10px;
 }
 
-#container-fields .warning {
+#App #container-fields form .warning {
   position: relative;
   top: -10px;
   color: red;
@@ -129,41 +128,41 @@
 }
 
 @media (min-width: 1920px) {
-  #container-fields {
+  #App #container-fields {
     position: relative;
     top: 50px;
   }
 
-  #container-fields form {
+  #App #container-fields form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 900px;
     justify-content: center;
   }
-  #container-fields form .fields {
+  #App #container-fields form .fields {
     width: 450px;
     margin-top: 10px;
     text-align: center;
   }
 
-  #container-fields form .fields .fields-label {
+  #App #container-fields form .fields .fields-label {
     position: absolute;
     margin-top: -10px;
   }
 
-  #container-fields form #repo-forked {
+  #App #container-fields form #repo-forked {
     width: 345px;
     margin-top: 20px;
     margin-left: 105px;
   }
 
-  #container-fields form .warning {
+  #App #container-fields form .warning {
     text-align: left;
     left: 65px;
   }
 
-  #container-fields form #button {
+  #App #container-fields form #button {
     margin: 80px 600px 0 600px;
     width: 120px;
   }

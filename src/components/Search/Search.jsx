@@ -160,7 +160,7 @@ export default class Search extends Component {
               Include Forked
             </label>
           </div>
-          <div id='repo-button'>
+          <div id='repo-submit'>
             <button type='submit' id='button'>
               Search
             </button>
