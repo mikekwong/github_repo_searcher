@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import License from "../License/License";
 import "./Search.scss";
-import licenseList from "../../api/licenseList.json";
+import licenseList from "../../data/licenseList.json";
 
 export default class Search extends Component {
   state = {
@@ -28,7 +28,12 @@ export default class Search extends Component {
       this.setState({ starsInvalid: true });
     }
     if (stars && text) {
-      this.props.onSubmit(text, stars, license, forked);
+      this.props.onSubmit(
+        text,
+        stars,
+        typeof license === "object" && "mit",
+        forked
+      );
     }
   };
 
@@ -101,7 +106,7 @@ export default class Search extends Component {
             <input
               style={{ border: textInvalid && "1px solid red" }}
               className="text-input"
-              placeholder="name"
+              placeholder="react"
               name="text"
               type="text"
               value={text}
@@ -121,7 +126,7 @@ export default class Search extends Component {
                     : null
               }}
               className="text-input"
-              placeholder="stars"
+              placeholder=">100"
               name="stars"
               type="text"
               value={stars}

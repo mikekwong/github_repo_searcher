@@ -1,5 +1,9 @@
 [
   {
+    "license": "MIT",
+    "keyword": "mit"
+  },
+  {
     "license": "Apache license 2.0",
     "keyword": "apache-2.0"
   },
@@ -34,9 +38,5 @@
   {
     "license": "ISC",
     "keyword": "isc"
-  },
-  {
-    "license": "MIT",
-    "keyword": "mit"
   }
 ]

@@ -59,29 +59,29 @@
           width: 990px;
           margin-left: 8px;
           line-height: 22px;
-        }
-        #forked {
-          right: 305px;
-        }
-        #stars {
-          border-top: 0;
-          border-bottom: 0;
-          border-left: $pixel-border;
-          border-right: $pixel-border;
-        }
-        #stars,
-        #license {
-          @include flex-column;
-          justify-content: center;
-          text-align: center;
-          width: 147px;
-          height: auto;
-          padding-left: 0;
-          margin: 0;
-          padding-top: 30px;
-          span {
+          #forked {
+            right: 305px;
+          }
+          #stars {
+            border-top: 0;
+            border-bottom: 0;
+            border-left: $pixel-border;
+            border-right: $pixel-border;
+          }
+          #stars,
+          #license {
+            @include flex-column;
+            justify-content: center;
+            text-align: center;
+            width: 147px;
+            height: auto;
             padding-left: 0;
-            padding: 12px 0;
+            margin: 0;
+            padding-top: 30px;
+            span {
+              padding-left: 0;
+              padding: 12px 0;
+            }
           }
         }
       }
