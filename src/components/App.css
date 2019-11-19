@@ -28,9 +28,9 @@
 }
 
 #App #container-search {
-  position: relative;
-  top: 44px;
-  height: 590px;
+  /* position: relative; */
+  margin-top: 44px;
+  /* height: 600px; */
 }
 
 #App #container-search .headline {
@@ -43,11 +43,12 @@
   color: #4b5050;
   text-align: center;
   height: 80px;
+  margin-top: 40px;
 }
 
 #App #container-results {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   margin: 0 auto;
   color: #4b5050;
   width: 322px;
@@ -61,6 +62,7 @@
   /* position: relative; */
   bottom: 5px;
   text-align: center;
+  /* margin-top: 20px; */
   /* height: 70px; */
   background-color: #3f87c6;
   color: #fff;
