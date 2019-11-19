@@ -48,6 +48,7 @@ export default class App extends Component {
           </p>
           <Search onSubmit={this.onSearchSubmit} />
         </div>
+        <div id='line' />
         {isLoading && results.length === 0 && <img src={loader} alt='loader' />}
         {searchSubmitted && results.length > 0 && (
           <div id='container-results'>

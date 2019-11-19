@@ -83,6 +83,15 @@
   vertical-align: middle;
   padding: 30px 0;
   font-size: 10px;
+  margin-bottom: 10px;
+}
+
+#App #line {
+  position: relative;
+  width: 322px;
+  height: 1px;
+  background-color: #4b5050;
+  margin: 40px auto;
 }
 
 @media (min-width: 1920px) {
@@ -99,11 +108,17 @@
     white-space: normal;
   }
 
+  #App #line {
+    width: 1284px;
+    margin: 130px auto 80px auto;
+  }
+
   #App #container-instructions {
     padding-bottom: 80px;
   }
 
   #App #container-footer {
     font-size: 16px;
+    margin-bottom: 42px;
   }
 }

@@ -42,12 +42,66 @@
   top: 12px;
 }
 
-#App #container-results .results-list p:nth-last-child(3) {
+#App #container-results .results-list #description {
   padding: 4px 0 16px 12px;
   line-height: 28px;
 }
 
-#App #container-results .results-list p:nth-last-child(2),
-#App #container-results .results-list p:last-child {
+#App #container-results .results-list #stars,
+#App #container-results .results-list #license {
   padding: 22px 0 22px 12px;
+}
+
+@media (min-width: 1920px) {
+  #App #container-results {
+    width: 1284px;
+    margin-bottom: 55px;
+  }
+
+  #App #container-results p {
+    margin-bottom: 50px;
+  }
+
+  #App #container-results .results-list {
+    display: flex;
+    height: 100px;
+  }
+
+  #App #container-results .results-list p {
+    font-size: 14px;
+  }
+
+  #App #container-results #name-description-fork {
+    width: 990px;
+    margin-left: 8px;
+  }
+
+  #App #container-results .results-list #forked {
+    right: 305px;
+  }
+
+  #App #container-results .results-list #stars,
+  #App #container-results .results-list #license {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 147px;
+    height: 99px;
+    padding-left: 0;
+    margin: 0;
+    line-height: 30px;
+  }
+
+  #App #container-results .results-list #stars span,
+  #App #container-results .results-list #license span {
+    padding-left: 0;
+  }
+
+  #App #container-results .results-list #stars {
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 1px solid #4b5050;
+    border-right: 1px solid #4b5050;
+  }
 }

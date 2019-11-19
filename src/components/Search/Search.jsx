@@ -165,7 +165,6 @@ export default class Search extends Component {
               Search
             </button>
           </div>
-          <div id='line' />
         </form>
       </div>
     )
