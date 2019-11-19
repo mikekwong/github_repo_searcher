@@ -38,7 +38,9 @@ export default class App extends Component {
     return (
       <div id='App'>
         <div id='container-header'>
-          <img src={logo} id='logo' alt='logo' />
+          <a href='/'>
+            <img src={logo} id='logo' alt='logo' />
+          </a>
         </div>
         <div id='container-search'>
           <p className='headline'>Even Financial</p>
