@@ -7,15 +7,14 @@ const Results = ({ result }) => {
     <div className='results-list'>
       <p>{full_name}</p>
       {fork && <p id='forked'>forked</p>}
-      <p>{description}</p>
+      {/* <p id='forked'>forked</p> */}
+      <p>{description || 'No description.'}</p>
       <p id='stars'>
         Stars: <span>{stargazers_count}</span>
       </p>
-      {license && description && (
-        <p className={description.length > 46 ? 'bottom-margin' : null}>
-          License: <span>{license.name}</span>
-        </p>
-      )}
+      <p>
+        License: <span>{license.name || 'No License.'}</span>
+      </p>
     </div>
   )
 }

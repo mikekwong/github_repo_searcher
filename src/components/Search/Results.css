@@ -1,8 +1,8 @@
 #App #container-results .results-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px 0;
-  height: 1000px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  margin: 20px 0;
+  /* height: 1000px; */
   border: 1px solid #4b5050;
   position: relative;
 }
@@ -13,7 +13,7 @@
 }
 
 #App #container-results .results-list #stars {
-  width: 322px;
+  width: 321px;
   border-top: 1px solid #4b5050;
   border-bottom: 1px solid #4b5050;
 }
@@ -36,18 +36,15 @@
   color: #fff;
   background-color: #3f87c6;
   /* justify-content: flex-end; */
-  padding: 0 18px;
+  padding: 6px 19px;
   position: absolute;
   right: 12px;
   top: 12px;
 }
 
-#App #container-results .results-list p:nth-child(2) {
-  line-height: 30px;
-}
-
 #App #container-results .results-list p:nth-last-child(3) {
   padding: 4px 0 16px 12px;
+  line-height: 28px;
 }
 
 #App #container-results .results-list p:nth-last-child(2),

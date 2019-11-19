@@ -32,25 +32,6 @@ export default class App extends Component {
     this.setState({ isLoading: false })
   }
 
-  getResultsSumHeight () {
-    var results = document.getElementsByClassName('results-list')
-    let total = 0
-    console.log(results)
-
-    for (const result of results) {
-      console.log(result)
-    }
-
-    // for (let i = 0; i < results.length; i++) {
-    // console.log(results[i])
-    //   console.log(results.length)
-    //   console.log(results[i])
-    //   total += results[i].offsetHeight
-    //   console.log(total)
-    //   return total
-    // }
-  }
-
   render () {
     const { results, resultsHeight, isLoading } = this.state
     return (
@@ -65,12 +46,7 @@ export default class App extends Component {
         </div>
         {isLoading && results.length === 0 && <img src={loader} alt='loader' />}
         {!isLoading && results.length ? (
-          <div
-            id='container-results'
-            style={{
-              height: results.length && `${this.getResultsSumHeight()}px`
-            }}
-          >
+          <div id='container-results'>
             <p>SEARCH results:</p>
             {results.map(result => (
               <Results key={result.id} result={result} />

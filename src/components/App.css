@@ -47,16 +47,17 @@
 }
 
 #App #container-results {
-  display: flex;
-  flex-direction: column;
-  margin: 50px auto;
+  /* display: flex;
+  flex-direction: column; */
+  margin: 50px auto 35px auto;
   color: #4b5050;
   width: 322px;
-  height: auto;
+  /* height: 100vh; */
 }
 
 #App #container-results > p {
   text-align: center;
+  margin-bottom: 35px;
 }
 
 #App #container-footer {
