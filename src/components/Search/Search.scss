@@ -14,10 +14,12 @@
         .text-input {
           @include select-style;
           padding-left: 20px;
+          font-size: 15px;
         }
 
         select {
           @include select-style;
+          font-size: 15px;
           cursor: pointer;
           appearance: none;
           border-radius: 0px;
@@ -26,10 +28,12 @@
 
           option {
             @include placeholder-style;
+            font-size: 15px;
           }
         }
         .text-input::placeholder {
           @include placeholder-style;
+          font-size: 15px;
         }
       }
 
