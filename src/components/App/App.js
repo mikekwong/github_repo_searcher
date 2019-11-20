@@ -12,7 +12,7 @@ export default class App extends Component {
     isLoading: true,
     error: null,
     searchSubmitted: false,
-    noResults: false
+    noResults: false,
   };
 
   onSearchSubmit = async (text, stars, license, forked) => {
@@ -29,7 +29,7 @@ export default class App extends Component {
       );
       this.setState({
         results: data.items,
-        isLoading: false
+        isLoading: false,
       });
       if (data.items.length === 0) {
         this.setState({ noResults: true });
@@ -39,7 +39,7 @@ export default class App extends Component {
     } catch (error) {
       this.setState({
         error,
-        isLoading: false
+        isLoading: false,
       });
     }
     // Return to normal states to signify search has finished
@@ -52,22 +52,8 @@ export default class App extends Component {
       isLoading,
       searchSubmitted,
       error,
-      noResults
+      noResults,
     } = this.state;
-
-    let searchContent;
-    if (searchSubmitted && isLoading) {
-      searchContent = <Loader />;
-    } else {
-      searchContent = (
-        <div id="container-results">
-          <p>SEARCH results:</p>
-          {results.map(result => (
-            <Results key={result.id} result={result} />
-          ))}
-        </div>
-      );
-    }
 
     return (
       <div id="App">
@@ -83,10 +69,18 @@ export default class App extends Component {
           />
         </div>
         <div id="line" />
-        {searchContent}
+        {!searchSubmitted && results.length > 0 && (
+          <div id="container-results">
+            <p>SEARCH results:</p>
+            {results.map(result => (
+              <Results key={result.id} result={result} />
+            ))}
+          </div>
+        )}
+        {searchSubmitted && <Loader />}
         {noResults && <p id="noresults">No Results Found.</p>}
         {error && <p id="error">{error.response.data.errors[0].message}</p>}
-        {!error && !searchSubmitted && (
+        {!error && !searchSubmitted && results.length === 0 && (
           <div id="container-instructions">
             <p>
               Please enter query and click SEARCH{" "}

@@ -11,7 +11,6 @@ const Results = ({ result }) => {
         {fork && <p id="forked">forked</p>}
         <p id="description">{description || "No description."}</p>
       </div>
-
       <p id="stars">
         Stars: <span>{stargazers_count}</span>
       </p>

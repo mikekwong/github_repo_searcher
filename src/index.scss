@@ -1,8 +1,11 @@
+// Color variables
 $gray-color: #4b5050;
 $blue-color: #3f87c6;
 $warning-color: red;
 $white-color: #fff;
 $pixel-border: 1px solid $gray-color;
+
+//Mixins
 
 @mixin flex-column {
   display: flex;
