@@ -5,9 +5,11 @@ import logo from "../../assets/logo.png";
 const Header = () => {
   return (
     <div id="container-header">
-      <a href="/">
-        <img src={logo} id="logo" alt="logo" />
-      </a>
+      <div id="container-logo">
+        <a href="/">
+          <img src={logo} id="logo" alt="logo" />
+        </a>
+      </div>
     </div>
   );
 };
