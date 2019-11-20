@@ -80,7 +80,7 @@ export default class App extends Component {
         {searchSubmitted && <Loader />}
         {noResults && <p id="noresults">No Results Found.</p>}
         {error && <p id="error">{error.response.data.errors[0].message}</p>}
-        {!error && !searchSubmitted && results.length === 0 && (
+        {!error && !searchSubmitted && results.length === 0 && !noResults && (
           <div id="container-instructions">
             <p>
               Please enter query and click SEARCH{" "}
