@@ -11,6 +11,7 @@
       @include line-break;
     }
   }
+
   #container-instructions {
     height: 80px;
     margin-top: 40px;
@@ -19,6 +20,7 @@
       @include line-break;
     }
   }
+
   #container-results {
     margin: 40px auto 35px auto;
     color: $gray-color;
@@ -28,15 +30,7 @@
       margin-bottom: 35px;
     }
   }
-  #noresults {
-    text-align: center;
-    margin: 44px 0 34px 0;
-  }
-  #error {
-    text-align: center;
-    color: $warning-color;
-    margin-bottom: 44px;
-  }
+
   #container-footer {
     text-align: center;
     background-color: $blue-color;
@@ -46,12 +40,24 @@
     font-size: 10px;
     margin-bottom: 10px;
   }
+
   #line {
     position: relative;
     width: 322px;
     height: 1px;
     background-color: $gray-color;
     margin: 40px auto;
+  }
+
+  #noresults {
+    text-align: center;
+    margin: 44px 0 34px 0;
+  }
+
+  #error {
+    text-align: center;
+    color: $warning-color;
+    margin-bottom: 44px;
   }
 }
 
@@ -60,6 +66,7 @@
     #container-header #logo {
       left: 320px;
     }
+
     #container-search {
       p span::before {
         @include no-line-break;
@@ -68,16 +75,20 @@
         font-size: 38px;
       }
     }
+
     #container-instructions p span::before {
       @include no-line-break;
     }
+
     #line {
       width: 1284px;
       margin: 130px auto 80px auto;
     }
+
     #container-results > p {
       margin-bottom: 50px;
     }
+
     #container-footer {
       font-size: 16px;
       margin-bottom: 42px;

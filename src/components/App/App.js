@@ -18,6 +18,11 @@ export default class App extends Component {
   onSearchSubmit = async (text, stars, license, forked) => {
     // Reset these states in case a new search is submitted after existing one
     this.setState({ searchSubmitted: true, error: null, noResults: false });
+    // Necessary if user hasn't changed the default license option
+    if (typeof license === "object") {
+      license = "mit";
+    }
+
     try {
       const { data } = await github.get(
         `/repositories?q=${text}+stars:${stars}+license:${license}+fork:${forked}`

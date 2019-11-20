@@ -6,18 +6,22 @@
       margin: 20px 0;
       border: $pixel-border;
       position: relative;
+
       p {
         font-size: 14px;
       }
+
       span {
         font-weight: bold;
         padding-left: 5px;
       }
+
       #stars {
         width: 321px;
         border-top: $pixel-border;
         border-bottom: $pixel-border;
       }
+
       #name {
         font-size: 16px;
         color: $blue-color;
@@ -25,6 +29,7 @@
         margin: 21px 0 14px 12px;
         position: relative;
       }
+
       #forked {
         font-size: 16px;
         color: $white-color;
@@ -34,9 +39,11 @@
         right: 12px;
         top: 12px;
       }
+
       #description {
         padding: 4px 0 16px 12px;
       }
+
       #stars,
       #license {
         padding: 22px 0 22px 12px;
@@ -50,24 +57,30 @@
     #container-results {
       width: 1284px;
       margin-bottom: 55px;
+
       .results-list {
         display: flex;
+
         p {
           font-size: 14px;
         }
+
         #name-description-fork {
           width: 990px;
           margin-left: 8px;
           line-height: 22px;
+
           #forked {
             right: 305px;
           }
+
           #stars {
             border-top: 0;
             border-bottom: 0;
             border-left: $pixel-border;
             border-right: $pixel-border;
           }
+
           #stars,
           #license {
             @include flex-column;
@@ -78,6 +91,7 @@
             padding-left: 0;
             margin: 0;
             padding-top: 30px;
+
             span {
               padding-left: 0;
               padding: 12px 0;

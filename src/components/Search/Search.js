@@ -28,12 +28,7 @@ export default class Search extends Component {
       this.setState({ starsInvalid: true });
     }
     if (stars && text) {
-      this.props.onSubmit(
-        text,
-        stars,
-        typeof license === "object" && "mit",
-        forked
-      );
+      this.props.onSubmit(text, stars, license, forked);
     }
   };
 
@@ -47,7 +42,7 @@ export default class Search extends Component {
         [e.target.name]: e.target.value
       });
     }
-    // Call to clear field warnings when typing
+    // Invoked to clear field warnings when typing
     this.inputValidation(e);
   };
 
