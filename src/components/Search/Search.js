@@ -93,6 +93,7 @@ export default class Search extends Component {
       starsInvalidChars,
       starsRangeWrong
     } = this.state;
+    const { searchSubmitted, isLoading } = this.props;
     return (
       <div id="container-fields">
         <form onSubmit={this.onFormSubmit}>
@@ -106,6 +107,7 @@ export default class Search extends Component {
               type="text"
               value={text}
               onChange={this.onHandleChange}
+              disabled={searchSubmitted && isLoading}
             />
             {textInvalid && (
               <p className="warning">This input field is not valid.</p>
@@ -127,6 +129,7 @@ export default class Search extends Component {
               value={stars}
               onBlur={this.onStarsInputBlur}
               onChange={this.onHandleChange}
+              disabled={searchSubmitted && isLoading}
             />
             {starsInvalid && (
               <p className="warning">This input field is not valid.</p>
@@ -141,6 +144,8 @@ export default class Search extends Component {
             )}
           </div>
           <License
+            searchSubmitted={searchSubmitted}
+            isLoading={isLoading}
             licenses={licenseList}
             onHandleChange={this.onHandleChange}
           />
@@ -151,13 +156,21 @@ export default class Search extends Component {
                 type="checkbox"
                 id="forked"
                 name="forked"
+                disabled={searchSubmitted && isLoading}
               />
               <span id="repo-forked-checkmark" />
               Include Forked
             </label>
           </div>
           <div id="repo-submit">
-            <button type="submit" id="button">
+            <button
+              style={{
+                backgroundColor: searchSubmitted && isLoading ? "#4b5050" : ""
+              }}
+              type="submit"
+              id="button"
+              disabled={searchSubmitted && isLoading}
+            >
               Search
             </button>
           </div>

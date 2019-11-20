@@ -76,7 +76,11 @@ export default class App extends Component {
           <p id="headline">
             Even Financial <span>Github Repository Search</span>
           </p>
-          <Search onSubmit={this.onSearchSubmit} />
+          <Search
+            searchSubmitted={searchSubmitted}
+            isLoading={isLoading}
+            onSubmit={this.onSearchSubmit}
+          />
         </div>
         <div id="line" />
         {searchContent}

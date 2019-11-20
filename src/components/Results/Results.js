@@ -3,6 +3,7 @@ import "./Results.scss";
 
 const Results = ({ result }) => {
   const { full_name, fork, description, stargazers_count, license } = result;
+
   return (
     <div className="results-list">
       <div id="name-description-fork">
